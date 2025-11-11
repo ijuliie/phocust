@@ -1,5 +1,5 @@
 // import Footer from "@/components/Footer";
-// import Home from "@/components/Home";
+import Home from "@/components/Home";
 import Head from "next/head";
 
 export default function Page() {
@@ -8,7 +8,7 @@ export default function Page() {
       <Head>
         <title>Phocust Official Site</title>
       </Head>
-      <div>Phocust Official</div>
+      <Home />
     </>
   );
 }

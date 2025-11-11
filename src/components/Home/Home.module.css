@@ -1,0 +1,55 @@
+.home {
+    margin: 0 auto;
+}
+
+.imageContainer {
+    position: relative;
+    padding: 0px 20px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    
+    @media (min-width: 768px) {
+        height: 94vh;
+    }
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+
+    @media (min-width: 1280px) {
+        object-position: 50% 110%;
+    }
+}
+
+
+.imgOverlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    
+    @media (min-width: 768px) {
+        top: 110;
+    }
+    
+    @media (min-width: 1280px) {
+        top: 25;
+    }
+}
+
+.imgOverlay h1 {
+    color: #FFF;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    font-family: "Raleway", sans-serif;
+}
