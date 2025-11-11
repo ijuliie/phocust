@@ -1,4 +1,5 @@
 import { Container } from "@mui/material";
+import Link from "next/link";
 import styles from "./Nav.module.css"
 
 export default function Nav() {
@@ -6,19 +7,19 @@ export default function Nav() {
         <Container>
             <div className={`${styles.nav}`}>
                 <div>
-                    <a href="/music">
+                    <Link href="/music">
                         Music
-                    </a>
+                    </Link>
                 </div>
                 <div>
-                    <a target="_blank" href="https://phocust.bassthreadsmerch.com/shop/">
+                    <Link target="_blank" href="https://phocust.bassthreadsmerch.com/shop/">
                         Merch
-                    </a>
+                    </Link>
                 </div>
                 <div>
-                    <a href="">
+                    <Link href="">
                         Patreon
-                    </a>
+                    </Link>
                 </div>
             </div>
         </Container>
