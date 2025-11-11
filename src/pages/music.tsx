@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Container, Grid, IconButton, ImageList, ImageListItem, ImageListItemBar, ListSubheader } from "@mui/material";
+import { Container, Grid} from "@mui/material";
 import { Fade } from 'react-awesome-reveal';
 
 import styles from "./Music.module.css"

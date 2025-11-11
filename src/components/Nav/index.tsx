@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import styles from "./Nav.module.css"
 import { Container } from "@mui/material";
+import styles from "./Nav.module.css"
 
 export default function Nav() {
     return (
