@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Grid} from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { Fade } from 'react-awesome-reveal';
 
 import styles from "./Music.module.css"
@@ -28,13 +28,13 @@ export default function Music() {
 
     const getOptimizedDropboxImage = (dropboxUrl: string) => {
         if (!dropboxUrl) return "/placeholder.jpg";
-        
+
         const direct = dropboxUrl.replace("www.dropbox.com", "dl.dropboxusercontent.com").replace("?dl=0", "").replace("?dl=1", "");
-       
+
         // Step 2: Add free CDN (images.weserv.nl) for resize + WebP + compression
         return `https://images.weserv.nl/?url=${encodeURIComponent(direct)}&w=400&h=400&fit=cover&output=webp&q=75`;
     };
-    
+
     return (
         <div className={styles.backgroundImage}>
             <Container>
@@ -44,16 +44,13 @@ export default function Music() {
                             return (
                                 m.c?.[1]?.v &&
                                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                                    <a target="_blank" href={m.c?.[2]?.v}>
-                                        <div className={styles.imageWrapper}>
+                                    <div className={styles.imageWrapper}>
+                                        <a target="_blank" href={m.c?.[2]?.v}>
                                             {/* Background Image (dims on hover) */}
                                             <div
                                                 className={styles.imageBg}
                                                 style={{
-                                                    backgroundImage:
-                                                        "linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)),url(" +
-                                                        (getOptimizedDropboxImage(m.c?.[1]?.v) || "") +
-                                                        ")",
+                                                    backgroundImage: `url(${(getOptimizedDropboxImage(m.c?.[1]?.v) || "")})`,
                                                 }}
                                             />
 
@@ -61,8 +58,8 @@ export default function Music() {
                                             <div className={styles.content}>
                                                 {m.c?.[0]?.v || 'Unknown Track'}
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </Grid>
                             )
                         })}
