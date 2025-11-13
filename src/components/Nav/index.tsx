@@ -1,32 +1,116 @@
-import { Container } from "@mui/material";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import styles from "./Nav.module.css"
+import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar } from "@mui/material";
 
 export default function Nav() {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    useEffect(() => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            const navbarElement = navbar as HTMLElement;
+            const height = navbarElement.offsetHeight;
+            console.log(height)
+            document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+        }
+
+        const handleResize = () => {
+            if (navbar) {
+                const navbarElement = navbar as HTMLElement;
+                const height = navbarElement.offsetHeight;
+                document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+
+    }, []);
+
+
+    const handleDrawerToggle = () => {
+        setMobileOpen((prevState) => !prevState);
+    };
+
+
+    const container = typeof window !== 'undefined'
+        ? () => window.document.body
+        : undefined;
+
+    const navItems = [
+        { href: "/", label: "Home" },
+        { href: "/music", label: "Music" },
+        { href: "https://phocust.bassthreadsmerch.com/shop/", label: "Merch", target: "_blank" },
+        { href: "https://www.patreon.com/c/iamphocust", label: "Patreon", target: "_blank" },
+    ];
+
+    const drawer = (
+        <Box onClick={handleDrawerToggle} >
+            <List>
+                {navItems.map((item) => (
+                    <ListItem key={item.label} disablePadding>
+                        <ListItemButton>
+                            <Link href={item.href} key={item.label} target={item.target}>
+                                {item.label}
+                            </Link>
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
+
     return (
-        <Container>
-            <div className={`${styles.nav}`}>
-                <div>
-                    <Link href="/">
-                        Home
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/music">
-                        Music
-                    </Link>
-                </div>
-                <div>
-                    <Link target="_blank" href="https://phocust.bassthreadsmerch.com/shop/">
-                        Merch
-                    </Link>
-                </div>
-                <div>
-                    <Link href="">
-                        Patreon
-                    </Link>
-                </div>
-            </div>
-        </Container>
+        <Box sx={{ display: 'flex' }}>
+            <AppBar className="navbar" component="nav">
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1 }}>
+                        {navItems.map((item) => (
+                            <Box key={item.label} sx={{ marginRight: 1 }}>
+                                <Link href={item.href} target={item.target}>
+                                    {item.label}
+                                </Link>
+                            </Box>
+                        ))}
+                    </Box>
+                    {/* socials go here */}
+                    {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                            {navItems.map((item) => (
+                                <Button key={item} sx={{ color: '#fff' }}>
+                                    {item}
+                                </Button>
+                            ))}
+                        </Box> */}
+
+                </Toolbar>
+            </AppBar>
+            <nav>
+                <Drawer
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true,
+                    }}
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 250 },
+                    }}
+                >
+                    {drawer}
+                </Drawer>
+            </nav>
+        </Box>
     );
 }
