@@ -1,7 +1,6 @@
-import styles from "./Home.module.css"
-import Image from "next/image";
 import { Container } from "@mui/material";
 import { Fade } from 'react-awesome-reveal';
+import styles from "./Home.module.css"
 
 export default function Home() {
     return (
