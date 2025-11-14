@@ -8,6 +8,7 @@ export default function Document() {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+                <script src="https://kit.fontawesome.com/240a684280.js" crossOrigin="anonymous" async />
             </Head>
             <body>
                 <Main />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Socials from "../Socials/Socials";
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar } from "@mui/material";
 
@@ -57,6 +58,11 @@ export default function Nav() {
                         </ListItemButton>
                     </ListItem>
                 ))}
+                <ListItem>
+                    <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+                        <Socials />
+                    </Box>
+                </ListItem>
             </List>
         </Box>
     );
@@ -76,22 +82,24 @@ export default function Nav() {
                     </IconButton>
                     <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1 }}>
                         {navItems.map((item) => (
-                            <Box key={item.label} sx={{ marginRight: 1 }}>
+                            <Box
+                                key={item.label}
+                                sx={{
+                                    marginRight: 1,
+                                    "&:hover": {
+                                        fontWeight: 800
+                                    },
+                                    cursor: "pointer",
+                                }}>
                                 <Link href={item.href} target={item.target}>
                                     {item.label}
                                 </Link>
                             </Box>
                         ))}
                     </Box>
-                    {/* socials go here */}
-                    {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                            {navItems.map((item) => (
-                                <Button key={item} sx={{ color: '#fff' }}>
-                                    {item}
-                                </Button>
-                            ))}
-                        </Box> */}
-
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                        <Socials />
+                    </Box>
                 </Toolbar>
             </AppBar>
             <nav>
@@ -105,7 +113,7 @@ export default function Nav() {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 250 },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 270 },
                     }}
                 >
                     {drawer}
