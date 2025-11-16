@@ -17,7 +17,7 @@ export default function Socials() {
         {
             social: "Spotify",
             icon: <i className="fab fa-spotify" />,
-            link: "https://spoti.fi/3S40vrX"
+            link: "https://open.spotify.com/artist/3Aov39Y01vC3JXRQiw3Pd0?si=vMFz092nT5u8Qq5h0Vpieg"
         },
         {
             social: "Soundcloud",
