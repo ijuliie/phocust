@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Socials from "../Socials/Socials";
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar } from "@mui/material";
+import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar, Typography } from "@mui/material";
 
 export default function Nav() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,6 +42,7 @@ export default function Nav() {
     const navItems = [
         { href: "/", label: "Home" },
         { href: "/music", label: "Music" },
+        { href: "/contact", label: "Contact" },
         { href: "https://phocust.bassthreadsmerch.com/shop/", label: "Merch", target: "_blank" },
         { href: "https://www.patreon.com/c/iamphocust", label: "Patreon", target: "_blank" },
     ];
@@ -53,7 +54,7 @@ export default function Nav() {
                     <ListItem key={item.label} disablePadding>
                         <ListItemButton>
                             <Link href={item.href} key={item.label} target={item.target}>
-                                {item.label}
+                                <Typography>{item.label}</Typography>
                             </Link>
                         </ListItemButton>
                     </ListItem>
@@ -83,16 +84,18 @@ export default function Nav() {
                     <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1 }}>
                         {navItems.map((item) => (
                             <Box
-                                key={item.label}
-                                sx={{
-                                    marginRight: 1,
-                                    "&:hover": {
-                                        fontWeight: 800
-                                    },
-                                    cursor: "pointer",
-                                }}>
+                                key={item.label}>
                                 <Link href={item.href} target={item.target}>
-                                    {item.label}
+                                    <Typography
+                                        sx={{
+                                            marginRight: 1,
+                                            "&:hover": {
+                                                fontWeight: 800
+                                            },
+                                            cursor: "pointer",
+                                        }}>
+                                        {item.label}
+                                    </Typography>
                                 </Link>
                             </Box>
                         ))}
