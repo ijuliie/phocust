@@ -1,0 +1,15 @@
+.backgroundImage {
+    background-image: url('/Beyond_Pre.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 93vh;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
