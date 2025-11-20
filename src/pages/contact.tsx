@@ -5,17 +5,16 @@ import styles from "./Contact.module.css"
 
 export default function Contact() {
     return (
-        <div className={styles.backgroundImage}>
-            <Container>
-                <Fade>
-                    <Box className={styles.box}>
-                        <div>
-                            <Typography variant="h5" fontWeight={900}>BOOKINGS:</Typography>
-                            <Typography variant="h6" fontWeight={500}>iamphocust@gmail.com</Typography>
-                        </div>
-                    </Box>
-                </Fade>
-            </Container>
-        </div>
+        <Fade>
+            <div className={`${styles.imageContainer}`}>
+                <img src="/Beyond_Pre.jpg" alt="image of phocust" />
+                <div className={`${styles.textOverlay}`}>
+                    <div>
+                        <Typography variant="h5" fontWeight={900}>BOOKINGS:</Typography>
+                        <Typography variant="h6" fontWeight={500}>iamphocust@gmail.com</Typography>
+                    </div>
+                </div>
+            </div>
+        </Fade>
     );
 }
