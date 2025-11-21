@@ -42,9 +42,9 @@ export default function Nav() {
     const navItems = [
         { href: "/", label: "Home" },
         { href: "/music", label: "Music" },
-        { href: "/contact", label: "Contact" },
         { href: "https://phocust.bassthreadsmerch.com/shop/", label: "Merch", target: "_blank" },
         { href: "https://www.patreon.com/c/iamphocust", label: "Patreon", target: "_blank" },
+        { href: "/contact", label: "Contact" },
     ];
 
     const drawer = (
