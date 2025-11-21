@@ -10,8 +10,8 @@ export default function Contact() {
                 <img src="/Beyond_Pre.jpg" alt="image of phocust" />
                 <div className={`${styles.textOverlay}`}>
                     <div>
-                        <Typography variant="h5" fontWeight={900}>BOOKINGS:</Typography>
-                        <Typography variant="h6" fontWeight={500}>iamphocust@gmail.com</Typography>
+                        <Typography variant="subtitle1" fontWeight={900}>BOOKINGS:</Typography>
+                        <Typography variant="subtitle2" fontWeight={500}>iamphocust@gmail.com</Typography>
                     </div>
                 </div>
             </div>
