@@ -6,6 +6,8 @@
     
     @media (min-width: 1080px) {
         height: 93vh;
+        width: 80%;
+        margin: auto;
     }
 }
 
@@ -36,7 +38,7 @@
     }
     
     @media (min-width: 1280px) {
-        top: 125;
+        top: 150;
     }
 }
 
