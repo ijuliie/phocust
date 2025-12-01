@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, CircularProgress, Container, Grid } from "@mui/material";
+import { Box, CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { Fade } from 'react-awesome-reveal';
 
 import styles from "./Music.module.css"
@@ -70,7 +70,7 @@ export default function Music() {
 
                                                 {/* Content (always full opacity) */}
                                                 <div className={styles.content}>
-                                                    {m.c?.[0]?.v || 'Unknown Track'}
+                                                    <Typography>{m.c?.[0]?.v || 'Unknown Track'}</Typography>
                                                 </div>
                                             </a>
                                         </div>
