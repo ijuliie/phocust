@@ -1,7 +1,6 @@
 import { Fade } from 'react-awesome-reveal';
-import { Box, Container, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import styles from "./Contact.module.css"
-
 
 export default function Contact() {
     return (
