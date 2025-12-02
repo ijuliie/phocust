@@ -9,7 +9,7 @@ export default function Home() {
                 <img src="/SLC_02.jpg" alt="image of phocust" />
                 <div className={`${styles.imgOverlay}`}>
                     <Container>
-                        <img src="/white with line.png" alt="" />
+                        <img src="/white with line.png" alt="logo" />
                     </Container>
                 </div>
             </div>

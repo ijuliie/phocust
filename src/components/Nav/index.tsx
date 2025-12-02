@@ -42,6 +42,7 @@ export default function Nav() {
     const navItems = [
         { href: "/", label: "Home" },
         { href: "/music", label: "Music" },
+        { href: "/tour", label: "Tour" },
         { href: "https://phocust.bassthreadsmerch.com/shop/", label: "Merch", target: "_blank" },
         { href: "https://www.patreon.com/c/iamphocust", label: "Patreon", target: "_blank" },
         { href: "/contact", label: "Contact" },
@@ -81,6 +82,18 @@ export default function Nav() {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <Box
+                        height={40}
+                        margin={"auto"}
+                        sx={{
+                            display: {
+                                xs: 'flex',
+                                sm: 'none'
+                            },
+                        }}
+                    >
+                        <img src="/white with line.png" alt="logo" />
+                    </Box>
                     <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1 }}>
                         {navItems.map((item) => (
                             <Box
