@@ -61,7 +61,7 @@ export default function Tour() {
                 <Box mt={3}>
                     {tourList.map((t) => {
                         return (
-                            <Box className={styles.tourWrapper}>
+                            <Box key={t.title} className={styles.tourWrapper}>
                                 <Box>
                                     <Typography fontWeight={700}>{formatDateTime(t.datetime)}</Typography>
                                     <Typography>{t.venue.location}</Typography>
