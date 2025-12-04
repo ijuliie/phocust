@@ -58,10 +58,10 @@ export default function Tour() {
         <Container sx={{ maxWidth: { md: 900 } }}>
             <Fade>
                 <Typography textAlign={{ sm: "center" }} variant="h5">Tour</Typography>
-                <Box mt={3}>
+                <Box>
                     {tourList.map((t) => {
                         return (
-                            <Box key={t.title} className={styles.tourWrapper}>
+                            <Box mt={2} key={t.title} className={styles.tourWrapper}>
                                 <Box>
                                     <Typography fontWeight={700}>{formatDateTime(t.datetime)}</Typography>
                                     <Typography>{t.venue.location}</Typography>
